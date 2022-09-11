@@ -1,5 +1,35 @@
+<h1>One piece</h1>
+<hr>
+<div class="row">
+    <div class="col">
+        <h3>Personajes</h3>
+        <hr>
+        <ul>
+            <li *ngFor="let personaje of personajes">
+                <h3>
+                    {{ personaje.nombre }} - {{ personaje.recompensa | currency }}
+                </h3>
+            </li>
+        </ul>
+    </div>
 
-<div>
-    <h1>One piece</h1>
-    <hr>
+    <div class="col">
+        <h3 *ngIf="!!!nuevoPersonaje.nombre; else detallePersonaje">
+            Agregar personaje
+        </h3>
+        <ng-template #detallePersonaje>
+            <h3>
+                Agregando a
+                {{ nuevoPersonaje.nombre }} con {{ nuevoPersonaje.recompensa | currency }} Berries
+            </h3>
+        </ng-template>
+        <hr>
+        <form (ngSubmit)="agregar()">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]="nuevoPersonaje.nombre"
+                autofocus>
+            <input type="number" name="recompensa" id="recompensa" placeholder="Recompensa"
+                [(ngModel)]="nuevoPersonaje.recompensa">
+            <button type="submit">Agregar</button>
+        </form>
+    </div>
 </div>
