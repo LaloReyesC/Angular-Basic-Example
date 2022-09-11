@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoComponent implements OnInit {
 
+  heroes: string[] = ['Luffy', 'Zoro', 'Sanji', 'Franky', 'Shanks'];
+  heroeBorrado: string | undefined;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onDelete() {
+
+    this.heroeBorrado = this.heroes.pop();
+
+  }
 }

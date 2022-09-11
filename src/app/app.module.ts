@@ -2,15 +2,19 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ListadoComponent } from './listado/listado.component';
+import { HeroeModule } from './Heroes/heroe.module';
+import { ContadorModule } from './Contador/contador.module';
+import { OnepieceModule } from './onepiece/onepiece.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ListadoComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HeroeModule,
+    ContadorModule,
+    OnepieceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
